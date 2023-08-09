@@ -3,6 +3,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
     id("io.micronaut.application") version "4.0.2"
     id("io.micronaut.aot") version "4.0.2"
+    id 'org.openjfx.javafxplugin' version '0.0.14'
 }
 
 version = "0.1"
@@ -32,6 +33,18 @@ application {
 java {
     sourceCompatibility = JavaVersion.toVersion("17")
     targetCompatibility = JavaVersion.toVersion("17")
+}
+
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls',
+                'javafx.web',
+                'javafx.fxml',
+                'javafx.swing',
+                'javafx.graphics',
+                'javafx.media',
+                'javafx.base',
+    ]
 }
 
 graalvmNative.toolchainDetection = false
